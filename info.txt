@@ -1,0 +1,31 @@
+# steps for creating docker file
+
+    - base image choose
+      - `FROM node:16.20.0-alpine3.18`
+  
+    - chose working directory
+      - `WORKDIR /app`
+  
+    - copy the package.lock.json file to working directory
+      - `COPY package.lock.json .`
+
+    - install the dependencies
+      - `RUN npm install`
+
+
+    - copy the package.json file to working directory
+      - `COPY package.json .`
+
+    - install the dependencies
+      - `RUN npm install`
+  
+    - copy the businesscard code
+      - `COPY . .`
+
+    - run the app when container start
+      - `CMD [npm start]`
+  
+    - expose the port to use by host , outside container
+      - `EXPOSE 3000`
+  
+    - f
